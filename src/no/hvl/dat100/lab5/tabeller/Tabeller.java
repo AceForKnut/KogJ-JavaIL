@@ -4,7 +4,7 @@ public class Tabeller {
 		
 	// a)
 		public static void main(String[] args) {
-			int[] UniTab = {1,2,3,4,5};	
+			int[] UniTab = {1,4,6};	
 			int[] UniTab2 = {2,4,6,8};  //La til en main for å teste kjøring <3
 			skrivUt(UniTab);
 			
@@ -40,7 +40,7 @@ public class Tabeller {
 	// b)
 	public static String tilStreng(int[] tabell) {
 		System.out.println();
-		System.out.print("[ ");
+		System.out.print("[");
 		StringBuilder tabstring = new StringBuilder();
 		for (int i = 0; i<tabell.length; i++) {
 			tabstring.append(tabell[i]);
@@ -49,7 +49,7 @@ public class Tabeller {
 			}
 		}
 		System.out.print(tabstring.toString());
-		System.out.print(" ]");
+		System.out.print("]");
 		return tabstring.toString();
 
 	}
@@ -122,15 +122,14 @@ public class Tabeller {
 	// f)
 	public static int[] reverser(int[] tabell) {
 
+		int[] revers = new int[tabell.length];
 		System.out.println();
-		System.out.print("[ ");
-		for (int i = tabell.length-1; i>=0;i--) {
-			System.out.print(tabell[i]);
-			if(i > 0) {
-				System.out.print(", ");
-			} 
-		} System.out.print(" ]");
-		return tabell;
+		
+		for (int i = tabell.length-1, k = 0; i>=0 && k<tabell.length;i--,k++) {
+			revers[k] = tabell[i];	 
+	}
+		skrivUt(revers);
+		return revers;
 		
 	}
 
